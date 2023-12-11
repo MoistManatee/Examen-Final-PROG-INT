@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" type="text/css" href="style.css">
+<script type="text/javascript" src="inscription.js"></script>
+
+<body>
+  <form action="traitement.html" method="post" onsubmit="return Verif()">
+    <div class="section1">
+      <!--coordonnees: partie 1-->
+    <fieldset>
+      <!--information du client pour le nom, prénom, la date de naissance, le mail, le site web et le mot de passe-->
+      <legend><b>Coordonnées du client</b></legend>
+      <label for="nom">Nom :</label>
+      <input type="text" id="nom" name="nom" placeholder="Votre Nom" required><br>
+
+      <label for="prenom">Prénom :</label>
+      <input type="text" id="prenom" name="prenom" placeholder="Votre Prénom" required><br>
+
+      <label for="dateNaissance">Date de naissance :</label>
+      <input type="date" id="dateNaissance" name="dateNaissance" required><br>
+
+      <label for="email">Mail :</label>
+      <input type="email" id="mail" name="mail" placeholder="Votre Mail" required><br>
+
+      <label for="siteWeb">Votre site :</label>
+      <input type="url" id="siteWeb" name="siteWeb" placeholder="Votre Site"><br>
+
+      <label for="motDePasse">Mot de passe :</label>
+      <input type="password" id="motDePasse" name="motDePasse" minlength="8" maxlength="8" placeholder="Votre mot de passe" required><br>
+
+      <!--radiobutton pour le genre-->
+      <label>Sexe :</label>
+      <input type="radio" id="homme" name="sexe" value="homme" required checked>
+      <label for="homme">Homme</label>
+      <input type="radio" id="femme" name="sexe" value="femme" required>
+      <label for="femme">Femme</label><br>
+
+      <!--boite d'options de pays pour l'utilisateur-->
+      <label for="pays">Pays :</label>
+      <select id="pays" name="pays" required>
+        <option value="">Votre pays</option>
+        <optgroup label="Afrique">
+            <option value="tunisie">Tunisie</option>
+            <option value="algerie">Algérie</option>
+            <option value="maroc">Maroc</option>
+            <option value="mauritanie">Mauritanie</option>
+        </optgroup>
+        <optgroup label="Europe">
+          <option value="france">France</option>
+          <option value="belgique">Belgique</option>
+          <option value="italie">Italie</option>
+          <option value="allemagne">Allemagne</option>
+        </optgroup>
+        <optgroup label="Amérique">
+          <option value="canada">Canada</option>
+          <option value="argentine">Argentine</option>
+        </optgroup>
+        <optgroup label="Autres">
+          <option value="asie">Asie</option>
+          <option value="ameriques">Amériques</option>
+          <option value="ocenie">Océanie</option>
+        </optgroup>
+      </select><br>
+    </fieldset>
+    </div>
+
+    <!--formations: partie 2-->
+    <fieldset>
+      <!--boite de selection pour les formations-->
+      <legend><b>Vos Formations</b></legend>
+      <input type="checkbox" id="formation1" name="formation1" value="formation1">
+      <label for="formation1">Formation en HTML5</label><br>
+
+      <input type="checkbox" id="formation2" name="formation2" value="formation2">
+      <label for="formation2">Formation en CSS3</label><br>
+
+      <input type="checkbox" id="formation3" name="formation3" value="formation3">
+      <label for="formation3">Formation en JS</label><br>
+
+      <!--boite de texte pour les besoins en formation-->
+      <textarea id="besoinFormation" name="besoinFormation" rows="5" cols="50" placeholder="Décrivez vos besions en formation"></textarea><br>
+    </fieldset>
+
+    <!--envoi du fichier: partie 3-->
+    <fieldset>
+      <legend><b>Envoyez nous votre photo</b></legend>
+      <!--envoyer le fichier-->
+      <input type="file" id="photo" name="photo" accept=".jpg, .png, .jpeg, .webp" required><br>
+      <input type="hidden" name="MAX_FILE_SIZE" value="10240"><br>
+
+      <!--envoyer le formulaire-->
+      <input type="submit" value="Envoyer" >
+
+      <!--reinitialiser le fichier déposé-->
+      <input type="reset" value="Réinitialiser">
+    </fieldset>
+  </form>
+</body>
+</html>
